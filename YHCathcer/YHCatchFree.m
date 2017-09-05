@@ -14,6 +14,7 @@
 #import <libkern/OSAtomic.h>
 #import <UIKit/UIKit.h>
 #import "NSObject+MemoryLeak.h"
+#import "MLeaksFinder.h"
 
 
 #include <malloc/malloc.h>
@@ -256,6 +257,7 @@ bool init_safe_free()
 {
 	
 #if _INTERNAL_WILDPOINT_ENABLED
+        
 //	init_safe_Calloc();
 //	yhResetImageLoadAddress();
 	YHFreeGetDisplayQueue();

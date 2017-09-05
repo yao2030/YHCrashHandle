@@ -22,6 +22,8 @@
  * THE SOFTWARE.
  */
 
+#ifdef __arm64__
+
 	.globl _RDX_register
 	.globl _RBX_register
 	.globl _RDI_register
@@ -102,3 +104,6 @@ _R14_register:
 _R15_register:
     movq %r15, %rax
     ret
+
+
+#endif

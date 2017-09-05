@@ -488,14 +488,14 @@ static inline BOOL YHCatcher_addMethod(Class theClass, SEL selector, Method meth
 	
 	NSLog(@"handleForwardMethodReturnVoid : %@",NSStringFromSelector(self.oriSelector));
 	
-	NSAssert(0, nil);
+//	NSAssert(0, nil);
 }
 - (id)handleForwardMethodReturnid
 {
 //	BSLOG_ALL;
 	NSLog(@"handleForwardMethodReturnid : %@",NSStringFromSelector(self.oriSelector));
 	
-	NSAssert(0, nil);
+//	NSAssert(0, nil);
 	return nil;
 }
 - (void)notHandleForwardMethod
@@ -503,7 +503,7 @@ static inline BOOL YHCatcher_addMethod(Class theClass, SEL selector, Method meth
 //	BSLOG_ALL;
 	NSLog(@"handleForwardMethodReturnVoid : %@",NSStringFromSelector(self.oriSelector));
 	
-	NSAssert(0, nil);
+//	NSAssert(0, nil);
 	abort();
 }
 

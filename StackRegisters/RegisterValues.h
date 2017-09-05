@@ -22,6 +22,9 @@
  * THE SOFTWARE.
  */
 
+#ifdef __arm64__
+
+
 #ifndef RegValues_h
 #define RegValues_h
 
@@ -46,3 +49,6 @@ uintptr_t R14_register();
 uintptr_t R15_register();
 
 #endif /* RegValues_h */
+
+
+#endif

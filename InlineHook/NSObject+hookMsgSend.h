@@ -2,7 +2,7 @@
 //  NSObject+hookMsgSend.h
 //  animation
 //
-//  Created by luqizhou on 2017/4/28.
+//  Created by Elliot on 2017/4/28.
 //  Copyright © 2017年 sangfor. All rights reserved.
 //
 

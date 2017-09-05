@@ -2,7 +2,7 @@
 //  hook_msg_send.h
 //  animation
 //
-//  Created by luqizhou on 2017/5/8.
+//  Created by Elliot on 2017/5/8.
 //  Copyright © 2017年 sangfor. All rights reserved.
 //
 

@@ -2,12 +2,12 @@
 //  NSObject+hookMsgSend.m
 //  animation
 //
-//  Created by luqizhou on 2017/4/28.
+//  Created by Elliot on 2017/4/28.
 //  Copyright © 2017年 sangfor. All rights reserved.
 //
 
 #import "NSObject+hookMsgSend.h"
-
+#import <UIKit/UIKit.h>
 #include <pthread.h>
 #include <mach-o/dyld.h>
 #include <mach/mach.h>
@@ -561,37 +561,37 @@ void write_call_stack(struct CallStorage *pool, char *buf, FILE *file, int left,
         BOOL clsMethod;
     };
     
-    memset(excludeImps, 0, sizeof(excludeImps));
-    
-    struct exclude exclude[] = {
-        {[NSObject class], NSSelectorFromString(@"dealloc"), NO},
-        {[NSArray class], @selector(arrayWithObjects:count:), YES},
-        {[NSDictionary class], @selector(dictionaryWithObjects:forKeys:count:), YES},
-        {[UIView class], @selector(pointInside:withEvent:), NO},
-        {[UIView class], @selector(touchExtendInset), NO},
-        {[UIView class], @selector(setTouchExtendInset:), NO},
-        
-        {[NSObject class], @selector(forwardingTargetForSelector:), NO},
-        {[NSObject class], @selector(methodSignatureForSelector:), NO},
-        {[NSObject class], @selector(forwardInvocation:), NO},
-    };
-      
-    int j = 0;
-    for(int i = 0; i < sizeof(exclude)/sizeof(exclude[0]); i++) {
-        struct exclude ex = exclude[i];
-        Method method = ex.clsMethod? class_getClassMethod(ex.cls, ex.sel): class_getInstanceMethod(ex.cls, ex.sel);
-        
-        uintptr_t imp = (uintptr_t)method_getImplementation(method);
-        assert(imp >= imageLoadAddrStart && imp < imageLoadAddrEnd);
-        
-        excludeImps[j++] = (IMP)imp;
-    }
+//    memset(excludeImps, 0, sizeof(excludeImps));
+//    
+//    struct exclude exclude[] = {
+//        {[NSObject class], NSSelectorFromString(@"dealloc"), NO},
+//        {[NSArray class], @selector(arrayWithObjects:count:), YES},
+//        {[NSDictionary class], @selector(dictionaryWithObjects:forKeys:count:), YES},
+//        {[UIView class], @selector(pointInside:withEvent:), NO},
+//        {[UIView class], @selector(touchExtendInset), NO},
+//        {[UIView class], @selector(setTouchExtendInset:), NO},
+//        
+//        {[NSObject class], @selector(forwardingTargetForSelector:), NO},
+//        {[NSObject class], @selector(methodSignatureForSelector:), NO},
+//        {[NSObject class], @selector(forwardInvocation:), NO},
+//    };
+//    
+//    int j = 0;
+//    for(int i = 0; i < sizeof(exclude)/sizeof(exclude[0]); i++) {
+//        struct exclude ex = exclude[i];
+//        Method method = ex.clsMethod? class_getClassMethod(ex.cls, ex.sel): class_getInstanceMethod(ex.cls, ex.sel);
+//        
+//        uintptr_t imp = (uintptr_t)method_getImplementation(method);
+//        assert(imp >= imageLoadAddrStart && imp < imageLoadAddrEnd);
+//        
+//        excludeImps[j++] = (IMP)imp;
+//    }
     return;
 #endif
 }
 
 + (void)load {
-    //[self startRecord];
+    [self startRecord];
 //    NSDate *t1 = [NSDate date];
 //    for(int i = 0; i < 100000; i++) {
 //        mach_thread_self();

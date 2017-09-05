@@ -22,9 +22,13 @@
  * THE SOFTWARE.
  */
 
+
+#ifdef __arm64__
+
 #ifndef StackWalkthrough_h
 #define StackWalkthrough_h
 
 void StackWalkthrough(int x);
 
 #endif /* StackWalkthrough_h */
+#endif

@@ -15,7 +15,7 @@
 		DC1B959F1EF50C2800A2E2C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1B959D1EF50C2800A2E2C9 /* LaunchScreen.storyboard */; };
 		DC1B95B01EF50CF700A2E2C9 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = DC1B95A71EF50CF700A2E2C9 /* fishhook.c */; };
 		DC1B95B11EF50CF700A2E2C9 /* queue.c in Sources */ = {isa = PBXBuildFile; fileRef = DC1B95AA1EF50CF700A2E2C9 /* queue.c */; };
-		DC1B95B21EF50CF700A2E2C9 /* YHCatchFree.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B95AD1EF50CF700A2E2C9 /* YHCatchFree.m */; };
+		DC1B95B21EF50CF700A2E2C9 /* YHCatchFree.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B95AD1EF50CF700A2E2C9 /* YHCatchFree.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DC1B95B31EF50CF700A2E2C9 /* YHCatchProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B95AF1EF50CF700A2E2C9 /* YHCatchProxy.m */; };
 		DC1B95B61EF50F8800A2E2C9 /* AppStack.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B95B51EF50F8800A2E2C9 /* AppStack.m */; };
 		DC1B95BC1EF5108700A2E2C9 /* NSArray+ExceptionHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B95B91EF5108700A2E2C9 /* NSArray+ExceptionHandle.m */; };
@@ -33,8 +33,6 @@
 		DC1B95F41EF517CA00A2E2C9 /* inlinehook.c in Sources */ = {isa = PBXBuildFile; fileRef = DC1B95EE1EF517CA00A2E2C9 /* inlinehook.c */; };
 		DC1B95F51EF517CA00A2E2C9 /* new_objc_msgSend_arm64.s in Sources */ = {isa = PBXBuildFile; fileRef = DC1B95F01EF517CA00A2E2C9 /* new_objc_msgSend_arm64.s */; };
 		DC1B95F61EF517CA00A2E2C9 /* NSObject+hookMsgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1B95F21EF517CA00A2E2C9 /* NSObject+hookMsgSend.m */; };
-		DC1B96011EF5185C00A2E2C9 /* RegisterValues.s in Sources */ = {isa = PBXBuildFile; fileRef = DC1B95FE1EF5185C00A2E2C9 /* RegisterValues.s */; };
-		DC1B96021EF5185C00A2E2C9 /* StackWalkthrough.s in Sources */ = {isa = PBXBuildFile; fileRef = DC1B96001EF5185C00A2E2C9 /* StackWalkthrough.s */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,11 +85,6 @@
 		DC1B95F01EF517CA00A2E2C9 /* new_objc_msgSend_arm64.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = new_objc_msgSend_arm64.s; sourceTree = "<group>"; };
 		DC1B95F11EF517CA00A2E2C9 /* NSObject+hookMsgSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+hookMsgSend.h"; sourceTree = "<group>"; };
 		DC1B95F21EF517CA00A2E2C9 /* NSObject+hookMsgSend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+hookMsgSend.m"; sourceTree = "<group>"; };
-		DC1B95FC1EF5185C00A2E2C9 /* Registers-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Registers-Bridging-Header.h"; sourceTree = "<group>"; };
-		DC1B95FD1EF5185C00A2E2C9 /* RegisterValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterValues.h; sourceTree = "<group>"; };
-		DC1B95FE1EF5185C00A2E2C9 /* RegisterValues.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = RegisterValues.s; sourceTree = "<group>"; };
-		DC1B95FF1EF5185C00A2E2C9 /* StackWalkthrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackWalkthrough.h; sourceTree = "<group>"; };
-		DC1B96001EF5185C00A2E2C9 /* StackWalkthrough.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = StackWalkthrough.s; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +101,6 @@
 		DC1B95831EF50C2600A2E2C9 = {
 			isa = PBXGroup;
 			children = (
-				DC1B95FB1EF5185C00A2E2C9 /* StackRegisters */,
 				DC1B95EC1EF517CA00A2E2C9 /* InlineHook */,
 				DC1B95C31EF5111E00A2E2C9 /* MLeaksFinder.h */,
 				DC1B95BE1EF5111E00A2E2C9 /* MOALeaksFinder */,
@@ -225,18 +217,6 @@
 			path = InlineHook;
 			sourceTree = "<group>";
 		};
-		DC1B95FB1EF5185C00A2E2C9 /* StackRegisters */ = {
-			isa = PBXGroup;
-			children = (
-				DC1B95FC1EF5185C00A2E2C9 /* Registers-Bridging-Header.h */,
-				DC1B95FD1EF5185C00A2E2C9 /* RegisterValues.h */,
-				DC1B95FE1EF5185C00A2E2C9 /* RegisterValues.s */,
-				DC1B95FF1EF5185C00A2E2C9 /* StackWalkthrough.h */,
-				DC1B96001EF5185C00A2E2C9 /* StackWalkthrough.s */,
-			);
-			path = StackRegisters;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,6 +248,7 @@
 				TargetAttributes = {
 					DC1B958B1EF50C2700A2E2C9 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 8LWS6ZWSUN;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -309,7 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC1B95BD1EF5108700A2E2C9 /* NSDictionary+ExceptionHandle.m in Sources */,
-				DC1B96021EF5185C00A2E2C9 /* StackWalkthrough.s in Sources */,
 				DC1B95E51EF5111E00A2E2C9 /* UITabBarController+MemoryLeak.m in Sources */,
 				DC1B95B21EF50CF700A2E2C9 /* YHCatchFree.m in Sources */,
 				DC1B95F41EF517CA00A2E2C9 /* inlinehook.c in Sources */,
@@ -322,7 +302,6 @@
 				DC1B95941EF50C2700A2E2C9 /* AppDelegate.m in Sources */,
 				DC1B95F31EF517CA00A2E2C9 /* inline_hook_arm64.s in Sources */,
 				DC1B95E41EF5111E00A2E2C9 /* UIPageViewController+MemoryLeak.m in Sources */,
-				DC1B96011EF5185C00A2E2C9 /* RegisterValues.s in Sources */,
 				DC1B95B11EF50CF700A2E2C9 /* queue.c in Sources */,
 				DC1B95BC1EF5108700A2E2C9 /* NSArray+ExceptionHandle.m in Sources */,
 				DC1B95E31EF5111E00A2E2C9 /* UINavigationController+MemoryLeak.m in Sources */,
@@ -452,9 +431,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8LWS6ZWSUN;
 				INFOPLIST_FILE = YHCrashHandle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.justlike.YHCrashHandle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YH.YHCrashHandle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -463,9 +443,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8LWS6ZWSUN;
 				INFOPLIST_FILE = YHCrashHandle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.justlike.YHCrashHandle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.YH.YHCrashHandle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

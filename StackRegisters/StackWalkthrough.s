@@ -23,6 +23,8 @@
  */
 
 
+#ifdef __arm64__
+
 .globl _StackWalkthrough
 
 
@@ -36,3 +38,4 @@ _StackWalkthrough:
       pop   %rdx
       pop   %rbp
       ret
+#endif
